@@ -28,10 +28,12 @@ public class ListDataAdapter extends RecyclerView.Adapter<ListDataAdapter.ListDa
 
     private List<ListData> listData;
     private Context mcontext;
+    private Activity activity ;
 
-    public ListDataAdapter(Context context, List<ListData> data) {
+    public ListDataAdapter(Context context, Activity activity, List<ListData> data) {
         this.mcontext = context;
         this.listData = data;
+        this.activity = activity ;
     }
 
     public void setData(Context context, List<ListData> listData){
@@ -72,7 +74,7 @@ public class ListDataAdapter extends RecyclerView.Adapter<ListDataAdapter.ListDa
                 holder.title_recycler.setText("MỚI NHẤT");
                 holder.rcvItem.setLayoutManager(layoutManager);
                 holder.rcvItem.setFocusable(false);
-                AdpaterCongthuc moinhatAdapter = new AdpaterCongthuc( list.getCongthucList(), (Activity) this.mcontext);
+                AdpaterCongthuc moinhatAdapter = new AdpaterCongthuc( list.getCongthucList(), this.activity);
                 moinhatAdapter.setData(list.getCongthucList());
                 holder.rcvItem.setAdapter(moinhatAdapter);
         }

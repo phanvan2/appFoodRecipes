@@ -36,24 +36,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navView, navController);
 
 
-        loadData();
-    }
-    public void loadData(){
-        ApiService.apiService.getDanhmucApi().enqueue(new Callback<result_danhmuc>() {
-            @Override
-            public void onResponse(Call<result_danhmuc> call, Response<result_danhmuc> response) {
-                result_danhmuc result = response.body() ;
-                for( int i = 0 ; i < result.getData().size() ; i ++ ) {
-                    danhmucs.add(result.getData().get(i)) ;
-                }
-            }
 
-            @Override
-            public void onFailure(Call<result_danhmuc> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "LỖi " , Toast.LENGTH_LONG).show();
-
-            }
-        });
     }
 
 }

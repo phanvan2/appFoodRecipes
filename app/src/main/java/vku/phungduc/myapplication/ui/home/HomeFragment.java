@@ -51,6 +51,7 @@ public class HomeFragment extends Fragment {
     private ListDataAdapter  listDataAdapter ;
     int status = 0 ;
 
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
@@ -68,7 +69,7 @@ public class HomeFragment extends Fragment {
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerCongthuc) ;
 
         listData = new ArrayList<>();
-        listDataAdapter = new ListDataAdapter(view.getContext(), createData(view )) ;
+        listDataAdapter = new ListDataAdapter(view.getContext() , getActivity() , createData(view ) ) ;
         RecyclerView.LayoutManager mLayoutManager  = new LinearLayoutManager( view.getContext());
         recyclerView.setFocusable(false);
         recyclerView.setLayoutManager(mLayoutManager);

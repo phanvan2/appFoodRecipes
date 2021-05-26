@@ -5,6 +5,7 @@ public class Congthuc {
     private int  idDanhmuc  ;
     private int idUser ;
     private String tenUser ;
+    private String img_user ;
     private String ten_monAn ;
     private String ngayDang ;
     private String moTa ;
@@ -13,10 +14,11 @@ public class Congthuc {
     private String nguyenLieu ;
     private String trangThai ;
 
-    public Congthuc(int id, int idDanhmuc, int idUser, String tenUser, String ten_monAn, String ngayDang, String moTa, String img, String step, String nguyenLieu, String trangThai) {
+    public Congthuc(int id, int idDanhmuc, int idUser, String tenUser, String img_user, String ten_monAn, String ngayDang, String moTa, String img, String step, String nguyenLieu, String trangThai) {
         this.id = id;
         this.idDanhmuc = idDanhmuc;
         this.idUser = idUser;
+        this.img_user = img_user ;
         this.tenUser = tenUser ;
         this.ten_monAn = ten_monAn;
         this.ngayDang = ngayDang;
@@ -113,5 +115,13 @@ public class Congthuc {
 
     public void setTenUser(String tenUser) {
         this.tenUser = tenUser;
+    }
+
+    public String getImg_user() {
+        return img_user;
+    }
+
+    public void setImg_user(String img_user) {
+        this.img_user = img_user;
     }
 }
