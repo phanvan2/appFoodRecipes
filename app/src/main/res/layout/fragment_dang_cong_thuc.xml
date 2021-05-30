@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.DangCongthucActivity">
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="vertical"
+           android:layout_margin="15dp"
+           >
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Thêm món ăn mới"
+               android:gravity="center"
+               android:textSize="40sp"
+               android:textColor="@color/black"
+               android:fontFamily="sans-serif"
+               android:textStyle="bold"/>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:background="#9953F18D"
+               android:orientation="vertical"
+               android:padding="5dp">
+
+               <ImageView
+                   android:id="@+id/img_Postfood"
+                   android:layout_width="match_parent"
+                   android:layout_height="150dp"
+
+                   tools:srcCompat="@tools:sample/avatars" />
+
+               <Button
+                   android:id="@+id/btn_selectImage"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"
+                   android:layout_marginTop="30dp"
+                   android:layout_marginBottom="15dp"
+                   android:background="@drawable/custom_button"
+                   android:backgroundTintMode="src_over"
+                   android:text="Chọn ảnh món ăn"
+                   android:textColor="@color/white" />
+
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Tên món ăn"
+                   android:textColor="@color/black"
+                   android:textSize="20sp"
+                   android:textStyle="bold" />
+
+               <androidx.cardview.widget.CardView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   app:cardCornerRadius="10dp"
+                   app:cardUseCompatPadding="true">
+
+                   <EditText
+                       android:id="@+id/edit_nameFood"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:background="?attr/selectableItemBackground"
+                       android:clickable="true"
+                       android:drawablePadding="10dp"
+                       android:focusable="true"
+                       android:gravity="center_vertical"
+                       android:hint="Nhập tên món ăn tại đây"
+                       android:padding="14dp"
+                       android:textColor="#2D8333"
+                       android:textSize="16sp" />
+               </androidx.cardview.widget.CardView>
+
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Danh mục"
+                   android:textColor="@color/black"
+                   android:textSize="20sp"
+                   android:textStyle="bold" />
+
+               <androidx.cardview.widget.CardView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   app:cardCornerRadius="10dp"
+                   app:cardUseCompatPadding="true">
+
+                   <EditText
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:background="?attr/selectableItemBackground"
+                       android:clickable="true"
+                       android:drawablePadding="10dp"
+                       android:focusable="true"
+                       android:gravity="center_vertical"
+                       android:hint="Thịt bò"
+                       android:padding="14dp"
+                       android:textColor="#2D8333"
+                       android:textSize="16sp" />
+               </androidx.cardview.widget.CardView>
+
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Mô tả"
+                   android:textColor="@color/black"
+                   android:textSize="20sp"
+                   android:textStyle="bold" />
+
+               <androidx.cardview.widget.CardView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   app:cardCornerRadius="10dp"
+                   app:cardUseCompatPadding="true">
+
+                   <EditText
+                       android:id="@+id/edit_moTa"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:background="?attr/selectableItemBackground"
+                       android:clickable="true"
+                       android:drawablePadding="10dp"
+                       android:focusable="true"
+                       android:gravity="center_vertical"
+                       android:hint="Nhập mô tả món ăn tại đây"
+                       android:padding="14dp"
+                       android:textColor="#2D8333"
+                       android:textSize="16sp" />
+               </androidx.cardview.widget.CardView>
+
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Nguyên liệu"
+                   android:textColor="@color/black"
+                   android:textSize="20sp"
+                   android:textStyle="bold" />
+
+               <androidx.cardview.widget.CardView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   app:cardCornerRadius="10dp"
+                   app:cardUseCompatPadding="true">
+
+                   <EditText
+                       android:id="@+id/edit_nguyenLieu"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:background="?attr/selectableItemBackground"
+                       android:clickable="true"
+                       android:drawablePadding="10dp"
+                       android:focusable="true"
+                       android:gravity="center_vertical"
+                       android:hint="Nội dung"
+                       android:padding="14dp"
+                       android:textColor="#2D8333"
+                       android:textSize="16sp" />
+               </androidx.cardview.widget.CardView>
+
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Hướng dẫn cách làm"
+                   android:textColor="@color/black"
+                   android:textSize="20sp"
+                   android:textStyle="bold" />
+
+               <androidx.cardview.widget.CardView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   app:cardCornerRadius="10dp"
+                   app:cardUseCompatPadding="true">
+
+                   <EditText
+                       android:id="@+id/edit_step"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:background="?attr/selectableItemBackground"
+                       android:clickable="true"
+                       android:drawablePadding="10dp"
+                       android:focusable="true"
+                       android:gravity="center_vertical"
+                       android:hint="Nội dung"
+                       android:padding="14dp"
+                       android:textColor="#2D8333"
+                       android:textSize="16sp" />
+               </androidx.cardview.widget.CardView>
+
+               <Button
+                   android:id="@+id/btn_postFood"
+                   android:layout_width="wrap_content"
+                   android:layout_height="35dp"
+                   android:layout_gravity="center"
+                   android:layout_marginTop="15dp"
+                   android:layout_marginBottom="100dp"
+                   android:background="@drawable/custom_button"
+                   android:text="Đăng công thức"
+                   android:textColor="@color/white" />
+           </LinearLayout>
+       </LinearLayout>
+   </ScrollView>
+
+
+
+
+
+</RelativeLayout>

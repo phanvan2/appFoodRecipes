@@ -27,7 +27,6 @@ import vku.phungduc.myapplication.model.tintuc.TinTuc;
 public class AdpaterCongthuc extends RecyclerView.Adapter<AdpaterCongthuc.CallViewHolder> {
     private List<Congthuc> congthucs ;
     private Activity activity ;
-
     public void setData(List<Congthuc> list){
         this.congthucs = list;
         notifyDataSetChanged();
@@ -58,6 +57,12 @@ public class AdpaterCongthuc extends RecyclerView.Adapter<AdpaterCongthuc.CallVi
                 .into(holder.imageCongthuc);
         holder.nameUser.setText(congthuc.getTenUser());
 
+        holder.nameUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         holder.linear_congthuc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

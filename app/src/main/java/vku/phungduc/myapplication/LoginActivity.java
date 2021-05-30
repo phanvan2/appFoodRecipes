@@ -20,6 +20,7 @@ import vku.phungduc.myapplication.api.ApiService;
 import vku.phungduc.myapplication.model.user.result_user;
 import vku.phungduc.myapplication.ui.acount.AcountFragment;
 
+import static vku.phungduc.myapplication.constant.checkUser;
 import static vku.phungduc.myapplication.constant.currentUser;
 
 public class LoginActivity extends AppCompatActivity {
@@ -51,10 +52,12 @@ public class LoginActivity extends AppCompatActivity {
                        // constant.setCurrentUser(resultUser.getData());
                         currentUser = resultUser.getData() ;
                         loading.dismiss();
+                        checkUser = true ;
                         Snackbar.make(v, "Đăng nhập thành công ", Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();
 //                        Intent intent_acount = new Intent(getApplicationContext(), AcountFragment.class)  ;
 //                        startActivity(intent_acount);
+
                         finish();
 
                     }

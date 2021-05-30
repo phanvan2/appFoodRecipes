@@ -9,10 +9,11 @@
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/ic_dashboard_black_24dp"
         android:title="Danh muc" />
-    <item
-        android:id="@+id/navigation_acount1"
-        android:icon="@drawable/ic_baseline_manage_accounts_24"
-        android:title="Acount" />
+
+    <item android:id="@+id/navigation_post"
+        android:title="Post"
+        android:icon="@drawable/post_add"
+        />
 
     <item android:id="@+id/navigation_search"
         android:title="Tìm kiếm"

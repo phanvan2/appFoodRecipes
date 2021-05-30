@@ -1,5 +1,6 @@
 package vku.phungduc.myapplication.ui.home;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,6 +50,8 @@ public class HomeFragment extends Fragment {
     private List<ListData> listData ;
     private AdapterTintuc CallAdapter ;
     private ListDataAdapter  listDataAdapter ;
+    ProgressDialog loading  = null  ;
+
     int status = 0 ;
 
 
@@ -81,6 +84,7 @@ public class HomeFragment extends Fragment {
         congthucs = new ArrayList<>() ;
         tinTucList = new ArrayList<>() ;
 
+        loading = ProgressDialog.show(view.getContext(),null,"Loading...",false,false);
 
         ApiService.apiService.getTintuc().enqueue(new Callback<result_tintuc>() {
             @Override
@@ -101,6 +105,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onFailure(Call<result_tintuc> call, Throwable t) {
                 Toast.makeText(getContext(), "lloix rồi" , Toast.LENGTH_LONG).show();
+                loading.dismiss();
             }
         });
 
@@ -126,12 +131,13 @@ public class HomeFragment extends Fragment {
                                 listData.add( new ListData(ListDataAdapter.TYPE_MOINHAT, congthucs, null)) ;
                                 listDataAdapter.notifyDataSetChanged();
 
-
+                                loading.dismiss();
                             }
 
                             @Override
                             public void onFailure(Call<result_congthuc> call, Throwable t) {
-                                Toast.makeText(getContext(), "lloix rồi" , Toast.LENGTH_LONG).show();
+                                loading.dismiss();
+                                Toast.makeText(getContext(), "lỗi " , Toast.LENGTH_LONG).show();
                             }
                         });
 

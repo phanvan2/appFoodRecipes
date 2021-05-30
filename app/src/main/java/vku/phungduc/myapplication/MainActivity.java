@@ -1,11 +1,17 @@
 package vku.phungduc.myapplication;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -20,12 +26,14 @@ import vku.phungduc.myapplication.model.danhmuc.result_danhmuc;
 import static vku.phungduc.myapplication.constant.danhmucs;
 
 public class MainActivity extends AppCompatActivity {
+    private static final int MY_PERMINSSION_REQUEST_CODE_ALL_PHONE  = 555 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
+        askPermissionAndCall(MainActivity.this);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
@@ -37,6 +45,40 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    private void askPermissionAndCall(Activity activity){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            int sendSmsPermission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.READ_EXTERNAL_STORAGE) ; // check quyền có đã bật hay chưa
+
+            if( sendSmsPermission != PackageManager.PERMISSION_GRANTED) { // nếu quyền  ko bật thì mở một request đòi bật quyền truy cập lên
+                activity.requestPermissions(
+                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                        MY_PERMINSSION_REQUEST_CODE_ALL_PHONE
+                );
+                return ;
+            }
+        }
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if( requestCode == 555){
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                // thực hiện hành động nêu chấp nhận
+                // hoặc ko cần vì khi chấp nhận thì quyền đã được bật
+                Toast.makeText(MainActivity.this, "ok bro" , Toast.LENGTH_LONG).show();
+
+            }
+            else {
+                // thực hiện hành động nếu người dùng từ chối quyền câp
+                // vi dụ nó đéo cho truy caapj bộ nhớ thì đóng acitvity đeo cho nó mở app nữa
+                Toast.makeText(MainActivity.this ,  "đéo choi nưa " , Toast.LENGTH_LONG).show();
+
+            }
+        }
     }
 
 }

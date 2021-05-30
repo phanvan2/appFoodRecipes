@@ -76,7 +76,7 @@
 
                 <Button
                     android:layout_weight="1"
-                    android:id="@+id/btneditacount"
+                    android:id="@+id/btn_editAcount"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="center"
@@ -233,7 +233,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_margin="20dp"
-                        android:text="Địa chỉ"
+                        android:text="Thông tin người dùng"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
 
@@ -295,7 +295,8 @@
                 android:id="@+id/linear_SignIn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="visible">
 
                 <LinearLayout
                     android:id="@+id/linear_login"

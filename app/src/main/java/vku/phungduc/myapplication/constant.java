@@ -12,6 +12,7 @@ import vku.phungduc.myapplication.model.user.User;
 public class constant {
 
     public static User currentUser = null  ;
+    public static boolean checkUser = false  ;
     public static List<Danhmuc> danhmucs = new ArrayList<Danhmuc>();
 
     public static User getCurrentUser() {

@@ -51,7 +51,7 @@
                     android:src="@drawable/douong" />
 
                 <TextView
-                    android:id="@+id/txv_nameUser"
+                    android:id="@+id/txv_inforName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -220,59 +220,12 @@ Hướng dẫn thực hiện :
 Miến rửa sạch, ngâm với nước lạnh cho đến khi miến mềm rồi mới vớt miến ra, cắt thành đoạn nhỏ vừa ăn. Nếu bạn đang vội, bạn có thể ngâm miến với nước ấm cho tiết kiệm thời gian.
 
 
-2.
-
-Phi thơm tỏi băm, gừng, đầu trắng hành lá với 2 muỗng canh dầu ăn. Cho thịt heo bằm vào, đảo đều.
-
-
-
-3.
-
-Thịt heo bằm cho vào tô. Hành lá cắt nhỏ, để riêng phần đầu trắng hành lá. Tỏi bóc vỏ, gừng gọt vỏ, băm nhỏ.
-
-
-4.
-
-Tiếp theo, cho 1 muỗng canh sa tế vào, đảo đều. Lượng sa tế bạn có thể cho thêm tùy vào khẩu vị của gia đình.
-
-
-5.
-
-Cho miến vào, đảo đều nhẹ tay. Thêm 160ml nước nóng hoặc nước dùng, tiếp tục đun sôi rồi mới hạ nhỏ lửa. Đun liu riu trong khoảng vài phút cho sợi miến nở mềm. Nêm gia vị 1 muỗng canh nước tương, 1 muỗng canh dầu hào, 1/2 muỗng cà phê muối vào cho vừa ăn.
-
-
-
-6.
-
-Tắt bếp, cho hành lá vào, trộn đều. Bày món ăn ra đĩa, dùng nóng nhé!
-
-
-
-
-Video hướng dẫn:
-
-Tin Tức Mới nhất
-
-Gợi ý 6 món ăn cực ngon, nhìn rất sang,...
-2020-12-22
-
-Chăm nấu thực đơn 4 món này, chồng con...
-2020-12-23
-
-Thực đơn 3 món ít mà chất, người kén...
-2020-12-23
-ĐÁNH GIÁ
-
-BÌNH LUẬN
-Mời bạn để lại bình luận
- Gửi
- hipro 2020-12-21 18:13:16
-Tuyệt cú mèo
-
+2
 
 "
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:visibility="gone" />
             </androidx.cardview.widget.CardView>
 
             <TextView
@@ -311,69 +264,7 @@ Mô tả Món ăn:
 
 Nguyên liệu:
 Miến
-Thịt heo bằm
-Sa tế
-Tỏi
-Hành lá
-Gừng
-Nước tương
-Dầu hào
-Muối
-Dầu ăn
-Hướng dẫn thực hiện :
-1.
 
-Miến rửa sạch, ngâm với nước lạnh cho đến khi miến mềm rồi mới vớt miến ra, cắt thành đoạn nhỏ vừa ăn. Nếu bạn đang vội, bạn có thể ngâm miến với nước ấm cho tiết kiệm thời gian.
-
-
-2.
-
-Phi thơm tỏi băm, gừng, đầu trắng hành lá với 2 muỗng canh dầu ăn. Cho thịt heo bằm vào, đảo đều.
-
-
-
-3.
-
-Thịt heo bằm cho vào tô. Hành lá cắt nhỏ, để riêng phần đầu trắng hành lá. Tỏi bóc vỏ, gừng gọt vỏ, băm nhỏ.
-
-
-4.
-
-Tiếp theo, cho 1 muỗng canh sa tế vào, đảo đều. Lượng sa tế bạn có thể cho thêm tùy vào khẩu vị của gia đình.
-
-
-5.
-
-Cho miến vào, đảo đều nhẹ tay. Thêm 160ml nước nóng hoặc nước dùng, tiếp tục đun sôi rồi mới hạ nhỏ lửa. Đun liu riu trong khoảng vài phút cho sợi miến nở mềm. Nêm gia vị 1 muỗng canh nước tương, 1 muỗng canh dầu hào, 1/2 muỗng cà phê muối vào cho vừa ăn.
-
-
-
-6.
-
-Tắt bếp, cho hành lá vào, trộn đều. Bày món ăn ra đĩa, dùng nóng nhé!
-
-
-
-
-Video hướng dẫn:
-
-Tin Tức Mới nhất
-
-Gợi ý 6 món ăn cực ngon, nhìn rất sang,...
-2020-12-22
-
-Chăm nấu thực đơn 4 món này, chồng con...
-2020-12-23
-
-Thực đơn 3 món ít mà chất, người kén...
-2020-12-23
-ĐÁNH GIÁ
-
-BÌNH LUẬN
-Mời bạn để lại bình luận
- Gửi
- hipro 2020-12-21 18:13:16
-Tuyệt cú mèo
 
 
 "
@@ -440,11 +331,13 @@ Tuyệt cú mèo
 
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginBottom="100dp">
+                android:layout_marginBottom="100dp"
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -457,17 +350,19 @@ Tuyệt cú mèo
                     android:text="Bình luận"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/douong"
-                        android:layout_gravity="center"/>
+                        android:layout_gravity="center"
+                        android:src="@drawable/douong" />
+
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -487,77 +382,31 @@ Tuyệt cú mèo
                             android:drawablePadding="10dp"
                             android:focusable="true"
                             android:gravity="center_vertical"
-                            android:padding="14dp"
                             android:hint="Viết bình luận"
+                            android:padding="14dp"
                             android:textColor="#2A7E2F"
                             android:textSize="16sp" />
                     </androidx.cardview.widget.CardView>
+
                     <Button
-                        android:layout_gravity="center"
-                        android:background="@drawable/custom_button"
+                        android:id="@+id/btn_postComment"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Đăng"/>
+                        android:layout_gravity="center"
+                        android:background="@drawable/custom_button"
+                        android:text="Đăng" />
                 </LinearLayout>
-                <androidx.cardview.widget.CardView
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_comment"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="#D0FFDB"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="0dp"
-                    app:cardUseCompatPadding="true">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_margin="10dp" >
+                    android:layout_height="match_parent" />
 
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:src="@drawable/douong"
-                                android:layout_gravity="center"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Phùng víp 1"
-                                android:layout_gravity="center"
-                                android:layout_margin="10dp"
-                                android:textColor="@color/black"
-                                android:textSize="15sp"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="2020/10/10"
-                                android:layout_gravity="center"
-                                android:layout_margin="10dp"
-                                android:textColor="@color/black"
-                                android:textSize="15sp"/>
-
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="ai da ngon quá"
-
-                                android:layout_marginLeft="60dp"
-                                android:textColor="@color/black"
-                                android:textSize="15sp"
-                                android:layout_marginBottom="10dp"/>
-                        </LinearLayout>
-                    </LinearLayout>
-
-
-                </androidx.cardview.widget.CardView>
+                <ProgressBar
+                    android:id="@+id/progress_comment"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
             </LinearLayout>
 
         </LinearLayout>

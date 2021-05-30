@@ -51,6 +51,9 @@ public interface ApiService {
     @GET("foodRecipes/getCongthuc.php")
     Call<result_congthuc> getCongthucApi_danhmuc(@Query("idDanhmuc") int id ) ;
 
+    @GET("foodRecipes/getCongthuc.php")
+    Call<result_congthuc> getCongthucApi_user(@Query("idUser") String id ) ;
+
     @GET("foodRecipes/getTintucs.php")
     Call<result_tintuc> getTintuc() ;
 
@@ -63,6 +66,18 @@ public interface ApiService {
     @Multipart
     @POST("foodRecipes/postUser.php")
     Call<String> postUser_register(@Part MultipartBody.Part user_regis);
+
+    @Multipart
+    @POST("foodRecipes/postUserUpdate.php")
+    Call<String> post_updateUser(@Part MultipartBody.Part imgPart, @Part MultipartBody.Part user_update ) ;
+
+    @Multipart
+    @POST("foodRecipes/post_comment.php")
+    Call<String> post_Comment(@Part MultipartBody.Part comment ) ;
+
+    @Multipart
+    @POST("foodRecipes/post_congthuc.php")
+    Call<String> postCongthuc(@Part MultipartBody.Part img ,@Part MultipartBody.Part data  ) ;
 
 
 }

@@ -7,10 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.GridLayout;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -41,7 +38,7 @@ public class SearchFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View  root  = inflater.inflate(R.layout.activity_search_foods, container, false);
+        View  root  = inflater.inflate(R.layout.fragment_search_foods, container, false);
         EditText editText_search = root.findViewById(R.id.editTextSearch);
         editText_search.setOnKeyListener(new View.OnKeyListener() {
             @Override
