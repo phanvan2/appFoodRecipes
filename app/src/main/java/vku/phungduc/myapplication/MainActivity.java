@@ -34,8 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
         askPermissionAndCall(MainActivity.this);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_notifications , R.id.navigation_search,  R.id.navigation_search,  R.id.navigation_acount)
                 .build();
@@ -67,14 +66,11 @@ public class MainActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if( requestCode == 555){
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                // thực hiện hành động nêu chấp nhận
-                // hoặc ko cần vì khi chấp nhận thì quyền đã được bật
-                Toast.makeText(MainActivity.this, "ok bro" , Toast.LENGTH_LONG).show();
+
 
             }
             else {
-                // thực hiện hành động nếu người dùng từ chối quyền câp
-                // vi dụ nó đéo cho truy caapj bộ nhớ thì đóng acitvity đeo cho nó mở app nữa
+
                 Toast.makeText(MainActivity.this ,  "đéo choi nưa " , Toast.LENGTH_LONG).show();
 
             }

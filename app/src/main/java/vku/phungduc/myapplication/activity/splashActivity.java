@@ -1,13 +1,10 @@
-package vku.phungduc.myapplication;
+package vku.phungduc.myapplication.activity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.SeekBar;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
@@ -16,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import vku.phungduc.myapplication.MainActivity;
+import vku.phungduc.myapplication.R;
 import vku.phungduc.myapplication.api.ApiService;
 import vku.phungduc.myapplication.model.danhmuc.result_danhmuc;
 
@@ -32,7 +31,7 @@ public class splashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         progressBar = findViewById(R.id.progressBar) ; 
-        intent_main = new Intent( splashActivity.this ,MainActivity.class) ;
+        intent_main = new Intent( splashActivity.this , MainActivity.class) ;
         Context context = getApplicationContext() ;
         ActionBar  actionBar = getSupportActionBar() ;
         actionBar.hide();

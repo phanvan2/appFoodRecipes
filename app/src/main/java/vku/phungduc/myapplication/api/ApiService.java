@@ -45,6 +45,9 @@ public interface ApiService {
     @GET("foodRecipes/getUsername.php")
     Call<result_user> getUserNameApi(@Query("email") String email , @Query("password") String password ) ;
 
+    @GET("foodRecipes/getUserId.php")
+    Call<result_user> getUserId(@Query("id") int id ) ;
+
     @GET("foodRecipes/getCongthuc.php")
     Call<result_congthuc> getCongthucApi() ;
 
@@ -54,14 +57,17 @@ public interface ApiService {
     @GET("foodRecipes/getCongthuc.php")
     Call<result_congthuc> getCongthucApi_user(@Query("idUser") String id ) ;
 
-    @GET("foodRecipes/getTintucs.php")
-    Call<result_tintuc> getTintuc() ;
-
     @GET("foodRecipes/getCongthuc.php")
     Call<result_congthuc> getCongthucApi_search(@Query("search") String search) ;
 
+    @GET("foodRecipes/getTintucs.php")
+    Call<result_tintuc> getTintuc() ;
+
+
     @GET("foodRecipes/getComment.php")
     Call<result_comment> getCommentApi(@Query("idMon_an") String idMon_an) ;
+
+
 
     @Multipart
     @POST("foodRecipes/postUser.php")
@@ -78,6 +84,15 @@ public interface ApiService {
     @Multipart
     @POST("foodRecipes/post_congthuc.php")
     Call<String> postCongthuc(@Part MultipartBody.Part img ,@Part MultipartBody.Part data  ) ;
+
+
+    @Multipart
+    @POST("foodRecipes/update_congthuc.php")
+    Call<String> postUpdateCongthuc(@Part MultipartBody.Part img ,@Part MultipartBody.Part data , @Part MultipartBody.Part id ) ;
+
+    @Multipart
+    @POST("foodRecipes/XoaCongThuc.php")
+    Call<String> postDeleteFood(@Part MultipartBody.Part id, @Part MultipartBody.Part idUser ) ;
 
 
 }

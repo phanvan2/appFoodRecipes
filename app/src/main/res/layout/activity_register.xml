@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity"
+    tools:context=".activity.RegisterActivity"
     android:background="@drawable/register">
 
 
@@ -45,10 +45,10 @@
                 android:layout_marginEnd="28dp"
 
                 android:ems="10"
+                android:gravity="center"
                 android:hint="Nhập tên của bạn"
                 android:inputType="textPersonName"
-                android:textColorHint="@color/teal_700"
-                android:gravity="center"/>
+                android:textColorHint="@color/black" />
 
             <EditText
                 android:id="@+id/editText_email"
@@ -61,10 +61,10 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="28dp"
                 android:ems="10"
+                android:gravity="center"
                 android:hint="Nhập email"
                 android:inputType="textEmailAddress"
-                android:textColorHint="@color/teal_700"
-                android:gravity="center" />
+                android:textColorHint="@color/black" />
 
             <EditText
                 android:id="@+id/editText_passWord_regis"
@@ -77,10 +77,10 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="28dp"
                 android:ems="10"
+                android:gravity="center"
                 android:hint="Mật khẩu"
                 android:inputType="textPassword"
-                android:textColorHint="@color/teal_700"
-                android:gravity="center"/>
+                android:textColorHint="@color/black" />
 
             <EditText
                 android:id="@+id/editText_rePassword_regis"
@@ -94,10 +94,10 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="28dp"
                 android:ems="10"
+                android:gravity="center"
                 android:hint="Mật khẩu"
                 android:inputType="textPassword"
-                android:textColorHint="@color/teal_700"
-                android:gravity="center"/>
+                android:textColorHint="@color/black" />
 
             <Button
                 android:id="@+id/btn_register"

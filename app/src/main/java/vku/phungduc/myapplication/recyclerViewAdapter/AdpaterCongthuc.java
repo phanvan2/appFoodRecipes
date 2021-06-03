@@ -19,10 +19,13 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import vku.phungduc.myapplication.DetailActivity;
 import vku.phungduc.myapplication.R;
+import vku.phungduc.myapplication.activity.DetailActivity;
+import vku.phungduc.myapplication.activity.InforUserActivity;
 import vku.phungduc.myapplication.model.congthuc.Congthuc;
 import vku.phungduc.myapplication.model.tintuc.TinTuc;
+
+import static vku.phungduc.myapplication.constant.currentUser;
 
 public class AdpaterCongthuc extends RecyclerView.Adapter<AdpaterCongthuc.CallViewHolder> {
     private List<Congthuc> congthucs ;
@@ -60,7 +63,9 @@ public class AdpaterCongthuc extends RecyclerView.Adapter<AdpaterCongthuc.CallVi
         holder.nameUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(v.getContext() , InforUserActivity.class)  ;
+                intent.putExtra("idUser" , congthuc.getIdUser()) ;
+                activity.startActivity(intent);
             }
         });
         holder.linear_congthuc.setOnClickListener(new View.OnClickListener() {

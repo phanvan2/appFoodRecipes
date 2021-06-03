@@ -39,4 +39,12 @@ public class constant {
         }
       return "" ;
     }
+    public static int find_IdDanhmuc(String nameDM){
+        for ( Danhmuc danhmuc: danhmucs) {
+            if( nameDM.equals(danhmuc.getTenDanhmuc())){
+                return danhmuc.getId() ;
+            }
+        }
+        return -1 ;
+    }
 }

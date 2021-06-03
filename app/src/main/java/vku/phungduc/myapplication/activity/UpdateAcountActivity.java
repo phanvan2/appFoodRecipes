@@ -1,5 +1,6 @@
 package vku.phungduc.myapplication.activity;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -43,6 +44,7 @@ public class UpdateAcountActivity extends AppCompatActivity {
     private EditText edit_updateName , edit_updateEmail ,edit_updateAbout ;
     private ImageView img_updateAvatar ;
     String realpath = "" ;
+    int idDanhmuc  ;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,6 +52,8 @@ public class UpdateAcountActivity extends AppCompatActivity {
         setContentView(R.layout.activity_update_acount);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         anhxa();
         setData();
         Button btn_updateInfor = findViewById(R.id.btn_updateInfor) ;

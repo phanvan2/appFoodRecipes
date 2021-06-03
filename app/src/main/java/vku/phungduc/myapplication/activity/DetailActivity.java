@@ -1,4 +1,4 @@
-package vku.phungduc.myapplication;
+package vku.phungduc.myapplication.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -29,10 +29,13 @@ import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import vku.phungduc.myapplication.R;
+import vku.phungduc.myapplication.URLImageParser;
 import vku.phungduc.myapplication.api.ApiService;
 import vku.phungduc.myapplication.model.comment.Comment;
 import vku.phungduc.myapplication.model.comment.result_comment;
 import vku.phungduc.myapplication.model.congthuc.Congthuc;
+import vku.phungduc.myapplication.model.post_binhluan;
 import vku.phungduc.myapplication.recyclerViewAdapter.AdapterComent;
 
 import static vku.phungduc.myapplication.constant.currentUser;
@@ -190,16 +193,6 @@ public class DetailActivity extends AppCompatActivity {
 }
 
 
-class post_binhluan{
-    private String idUser ;
-    private int idMon_an ;
-    private String noiDung ;
 
-    public post_binhluan(String idUser, int idMon_an, String noiDung) {
-        this.idUser = idUser;
-        this.idMon_an = idMon_an;
-        this.noiDung = noiDung;
-    }
-}
 
 

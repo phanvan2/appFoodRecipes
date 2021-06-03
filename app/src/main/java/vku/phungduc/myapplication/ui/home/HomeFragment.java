@@ -43,7 +43,6 @@ import vku.phungduc.myapplication.recyclerViewAdapter.ListDataAdapter;
 
 public class HomeFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
     private RecyclerView recyclerView ;
     private List<Congthuc> congthucs ;
     private  List<TinTuc> tinTucList ;
@@ -52,13 +51,9 @@ public class HomeFragment extends Fragment {
     private ListDataAdapter  listDataAdapter ;
     ProgressDialog loading  = null  ;
 
-    int status = 0 ;
-
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
 
@@ -97,7 +92,7 @@ public class HomeFragment extends Fragment {
 
                 listData.add( new ListData(ListDataAdapter.TYPE_TINTUC, null, tinTucList)) ;
                 listDataAdapter.notifyDataSetChanged();
-                status = 1  ;
+                createDataFood();
 
 
             }
@@ -111,46 +106,34 @@ public class HomeFragment extends Fragment {
 
 
 
-        new Thread(){
-            @Override
-            public void run() {
-                super.run();
-                Boolean check = true ;
-                while (check) {
-                    if ( status == 1) {
-                        ApiService.apiService.getCongthucApi().enqueue(new Callback<result_congthuc>() { // rest api cong thuc mon an
-                            
-                            @Override
-                            public void onResponse(Call<result_congthuc> call, Response<result_congthuc> response) {
-
-                                result_congthuc resultCongthuc  = response.body() ;
-                                for ( Congthuc ct : resultCongthuc.getData() ) {
-                                    congthucs.add(ct) ;
-                                }
-
-                                listData.add( new ListData(ListDataAdapter.TYPE_MOINHAT, congthucs, null)) ;
-                                listDataAdapter.notifyDataSetChanged();
-
-                                loading.dismiss();
-                            }
-
-                            @Override
-                            public void onFailure(Call<result_congthuc> call, Throwable t) {
-                                loading.dismiss();
-                                Toast.makeText(getContext(), "lỗi " , Toast.LENGTH_LONG).show();
-                            }
-                        });
-
-                        check = false ;
-                    }
-
-                }
-
-            }
-        }.start();
 
 
         return listData ;
+
+    }
+    public void createDataFood(){
+        ApiService.apiService.getCongthucApi().enqueue(new Callback<result_congthuc>() { // rest api cong thuc mon an
+
+            @Override
+            public void onResponse(Call<result_congthuc> call, Response<result_congthuc> response) {
+
+                result_congthuc resultCongthuc  = response.body() ;
+                for ( Congthuc ct : resultCongthuc.getData() ) {
+                    congthucs.add(ct) ;
+                }
+
+                listData.add( new ListData(ListDataAdapter.TYPE_MOINHAT, congthucs, null)) ;
+                listDataAdapter.notifyDataSetChanged();
+
+                loading.dismiss();
+            }
+
+            @Override
+            public void onFailure(Call<result_congthuc> call, Throwable t) {
+                loading.dismiss();
+                Toast.makeText(getContext(), "lỗi " , Toast.LENGTH_LONG).show();
+            }
+        });
 
     }
 }

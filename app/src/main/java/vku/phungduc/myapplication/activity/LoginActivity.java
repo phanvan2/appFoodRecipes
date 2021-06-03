@@ -1,4 +1,4 @@
-package vku.phungduc.myapplication;
+package vku.phungduc.myapplication.activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -16,9 +16,10 @@ import com.google.android.material.snackbar.Snackbar;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import vku.phungduc.myapplication.MainActivity;
+import vku.phungduc.myapplication.R;
 import vku.phungduc.myapplication.api.ApiService;
 import vku.phungduc.myapplication.model.user.result_user;
-import vku.phungduc.myapplication.ui.acount.AcountFragment;
 
 import static vku.phungduc.myapplication.constant.checkUser;
 import static vku.phungduc.myapplication.constant.currentUser;
@@ -49,14 +50,13 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<result_user> call, Response<result_user> response) {
                         result_user resultUser = response.body() ;
-                       // constant.setCurrentUser(resultUser.getData());
                         currentUser = resultUser.getData() ;
                         loading.dismiss();
                         checkUser = true ;
                         Snackbar.make(v, "Đăng nhập thành công ", Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();
-//                        Intent intent_acount = new Intent(getApplicationContext(), AcountFragment.class)  ;
-//                        startActivity(intent_acount);
+                        Intent intent_acount = new Intent(getApplicationContext(), MainActivity.class)  ;
+                        startActivity(intent_acount);
 
                         finish();
 

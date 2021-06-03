@@ -1,4 +1,4 @@
-package vku.phungduc.myapplication;
+package vku.phungduc.myapplication.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,24 +7,18 @@ import android.widget.EditText;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-
-import org.json.JSONStringer;
 
 import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.http.Multipart;
+import vku.phungduc.myapplication.MainActivity;
+import vku.phungduc.myapplication.R;
 import vku.phungduc.myapplication.api.ApiService;
-import vku.phungduc.myapplication.ui.acount.AcountFragment;
-import vku.phungduc.myapplication.ui.home.HomeFragment;
+import vku.phungduc.myapplication.model.User_regis;
 
 public class RegisterActivity extends AppCompatActivity {
     EditText edit_name  ;
@@ -89,14 +83,4 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 }
-class User_regis {
-    private  String ten ;
-    private String email ;
-    private String password ;
 
-    public User_regis(String ten, String email, String password) {
-        this.ten = ten;
-        this.email = email;
-        this.password = password;
-    }
-}

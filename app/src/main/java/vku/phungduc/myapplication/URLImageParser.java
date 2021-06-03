@@ -14,7 +14,7 @@ import android.view.View;
 import java.io.InputStream;
 import java.net.URL;
 
-class URLImageParser implements Html.ImageGetter {
+public class URLImageParser implements Html.ImageGetter {
     Context context;
     View container;
 

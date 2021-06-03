@@ -24,10 +24,14 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
-import vku.phungduc.myapplication.InforUserActivity;
-import vku.phungduc.myapplication.LoginActivity;
+import java.util.List;
+
 import vku.phungduc.myapplication.R;
-import vku.phungduc.myapplication.RegisterActivity;
+import vku.phungduc.myapplication.activity.InforUserActivity;
+import vku.phungduc.myapplication.activity.LoginActivity;
+import vku.phungduc.myapplication.activity.MyfoodActivitiy;
+import vku.phungduc.myapplication.activity.QuanLyCongThucAcitivity;
+import vku.phungduc.myapplication.activity.RegisterActivity;
 import vku.phungduc.myapplication.activity.UpdateAcountActivity;
 import vku.phungduc.myapplication.model.user.User;
 
@@ -38,7 +42,6 @@ public class AcountFragment extends Fragment {
 
 
     private User user = null ;
-
     TextView txt_username ;
     ImageView img_user ;
     View view ;
@@ -68,6 +71,24 @@ public class AcountFragment extends Fragment {
         FragmentManager fragmentManager = getParentFragmentManager();
         transaction = fragmentManager.beginTransaction();
 
+        LinearLayout linear_inforUser =  view.findViewById(R.id.linear_userInfor) ;
+        linear_inforUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext() , InforUserActivity.class)  ;
+                intent.putExtra("idUser" , Integer.valueOf(currentUser.getId())) ;
+                startActivity(intent);
+            }
+        });
+        LinearLayout linear_myfood = view.findViewById(R.id.linear_myfood)  ;
+        linear_myfood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext() , QuanLyCongThucAcitivity.class)  ;
+              //  intent.putExtra("idUser" , Integer.valueOf(currentUser.getId())) ;
+                startActivity(intent);
+            }
+        });
         LinearLayout linear_login = view.findViewById(R.id.linear_login)  ;
         linear_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,8 +112,13 @@ public class AcountFragment extends Fragment {
         btn_editUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), UpdateAcountActivity.class) ;
-                startActivity(intent);
+                if( currentUser != null){
+                    Intent intent = new Intent(v.getContext(), UpdateAcountActivity.class) ;
+                    startActivity(intent);
+                }else {
+
+                }
+
             }
         });
 
@@ -112,14 +138,19 @@ public class AcountFragment extends Fragment {
         txt_username.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext() , InforUserActivity.class)  ;
-                intent.putExtra("idUser" , currentUser.getId()) ;
-                startActivity(intent);
+                if( currentUser != null){// set xem thông tin user 
+                    Intent intent = new Intent(v.getContext() , InforUserActivity.class)  ;
+                    intent.putExtra("idUser" , Integer.valueOf(currentUser.getId())) ;
+                    startActivity(intent);
+                }
+
             }
         });
 
     }
-    void load_inForUser(User user , View view) {
+
+
+    public void load_inForUser(User user , View view) {
         if( currentUser != null) {
             user = currentUser ;
             LinearLayout linear_account = view.findViewById(R.id.linear_acount);
@@ -146,23 +177,5 @@ public class AcountFragment extends Fragment {
         }
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
 
-        new Thread(){
-            @Override
-            public void run() {
-                super.run();
-                boolean a  = true ;
-                while (a){
-                    if( checkUser) {
-
-                        onStart();
-                    }
-                }
-            }
-        }.start();
-
-    }
 }
